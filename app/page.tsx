@@ -162,16 +162,16 @@ export default function Home() {
 
       {/* Hero Section - Restructured into Two Clear Layers */}
       <section id="home" className="relative flex flex-col w-full">
-        {/* Layer 1 — Photo area (top) with responsive framing */}
-        <div className="relative w-full h-[60vh] sm:h-[65vh] min-h-[400px] overflow-hidden bg-black">
-          <div className="absolute inset-0 z-0">
+        {/* Layer 1 — Photo area (top) with responsive framing using object-contain and a taller mobile aspect ratio band */}
+        <div className="relative w-full h-[65vh] sm:h-[65vh] min-h-[420px] overflow-hidden bg-black flex items-center justify-center">
+          <div className="relative w-full h-full">
             <Image 
               src="/images/hero-family.jpeg"
               alt="JM Foods Family & Kids Enjoying Snacks"
               fill
               priority
               sizes="100vw"
-              className="object-cover object-[center_30%] sm:object-center"
+              className="object-contain object-center p-2 sm:p-0 sm:object-cover"
             />
             {/* Very light 10% overlay */}
             <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
