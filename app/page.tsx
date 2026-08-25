@@ -72,8 +72,8 @@ export default function Home() {
       <div className="h-1.5 w-full bg-gradient-to-r from-[#C81E2C] via-[#D4A017] to-[#C81E2C] sticky top-0 z-50 shadow-lg shadow-[#C81E2C]/20" />
 
       {/* Navbar */}
-      <nav className="sticky top-1.5 z-40 bg-black/95 backdrop-blur-md border-b border-white/10 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <nav className="sticky top-1.5 z-50 bg-black backdrop-blur-md border-b border-white/10 transition-all">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-50 bg-black">
           <a href="#" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4A017] shadow-md group-hover:scale-105 transition-transform bg-white/5 p-0.5">
               <Image 
@@ -116,34 +116,34 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu with 100% solid black background and high z-index */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-black/98 border-b border-white/15 px-6 py-6 space-y-4 shadow-2xl backdrop-blur-xl animate-in slide-in-from-top duration-300">
+          <div className="md:hidden absolute top-full left-0 w-full bg-black border-b border-white/20 px-6 py-6 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.95)] z-50">
             <a 
               href="#home" 
               onClick={() => setMobileMenuOpen(false)} 
-              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-2 border-b border-white/5 transition-colors"
+              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
               Home
             </a>
             <a 
               href="#products" 
               onClick={() => setMobileMenuOpen(false)} 
-              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-2 border-b border-white/5 transition-colors"
+              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
               Products
             </a>
             <a 
               href="/about" 
               onClick={() => setMobileMenuOpen(false)} 
-              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-2 border-b border-white/5 transition-colors"
+              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
               About Us
             </a>
             <a 
               href="#contact" 
               onClick={() => setMobileMenuOpen(false)} 
-              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-2 border-b border-white/5 transition-colors"
+              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
               Contact
             </a>
@@ -151,7 +151,7 @@ export default function Home() {
               <a 
                 href="#products" 
                 onClick={() => setMobileMenuOpen(false)} 
-                className="w-full py-3 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-bold text-center block shadow-lg shadow-[#C81E2C]/40 border border-[#D4A017]/40"
+                className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-bold text-center block shadow-lg shadow-[#C81E2C]/40 border border-[#D4A017]/40"
               >
                 Order Now
               </a>
@@ -162,21 +162,20 @@ export default function Home() {
 
       {/* Hero Section - Restructured into Two Clear Layers */}
       <section id="home" className="relative flex flex-col w-full">
-        {/* Layer 1 — Photo area (top) */}
-        <div className="relative w-full h-[55vh] sm:h-[60vh] min-h-[380px] overflow-hidden">
-          {/* Photo at close to full brightness/clarity with optional very light 10-15% darkening overlay */}
+        {/* Layer 1 — Photo area (top) with responsive framing */}
+        <div className="relative w-full h-[60vh] sm:h-[65vh] min-h-[400px] overflow-hidden bg-black">
           <div className="absolute inset-0 z-0">
             <Image 
               src="/images/hero-family.jpeg"
               alt="JM Foods Family & Kids Enjoying Snacks"
               fill
               priority
-              className="object-cover object-center"
+              sizes="100vw"
+              className="object-cover object-[center_30%] sm:object-center"
             />
-            {/* Very light 10-15% overlay */}
+            {/* Very light 10% overlay */}
             <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
           </div>
-          {/* No text sitting on top of this layer at all - pure visual */}
         </div>
 
         {/* Step 3 — Visual transition between the two layers: Red/gold curved accent stripe at the seam */}
