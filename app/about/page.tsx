@@ -330,11 +330,11 @@ export default function AboutPage() {
                     <a href="tel:923200060111" className="text-xs text-gray-300 hover:text-[#D4A017] font-semibold">+92 320 0060111</a>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[#D4A017] font-bold text-xs uppercase tracking-wider">Ghulam Sarwar (GM Mktg)</span>
+                    <span className="text-[#D4A017] font-bold text-xs uppercase tracking-wider">Ghulam Sarwar (GM Prod)</span>
                     <a href="tel:923113435351" className="text-xs text-gray-300 hover:text-[#D4A017] font-semibold">+92 311 3435351</a>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[#D4A017] font-bold text-xs uppercase tracking-wider">Jhanzaib Pathan (GM Prod)</span>
+                    <span className="text-[#D4A017] font-bold text-xs uppercase tracking-wider">Jhanzaib Pathan (GM MrktG)</span>
                     <a href="tel:923073470790" className="text-xs text-gray-300 hover:text-[#D4A017] font-semibold">+92 307 3470790</a>
                   </div>
                 </div>
