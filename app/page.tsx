@@ -1,11 +1,25 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Menu, X, Phone, Mail, MapPin, ShoppingBag, Award, Heart, Sparkles, ChevronRight, Share2, Globe } from 'lucide-react';
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const products = [
     {
@@ -71,10 +85,14 @@ export default function Home() {
       {/* Curved Red-to-Gold Gradient Accent Bar */}
       <div className="h-1.5 w-full bg-gradient-to-r from-[#C81E2C] via-[#D4A017] to-[#C81E2C] sticky top-0 z-50 shadow-lg shadow-[#C81E2C]/20" />
 
-      {/* Navbar */}
-      <nav className="sticky top-1.5 z-50 bg-black backdrop-blur-md border-b border-white/10 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-50 bg-black">
-          <a href="#" className="flex items-center gap-3 group">
+      {/* Navbar with smooth scroll transition between transparent and solid black */}
+      <nav className={`sticky top-1.5 z-45 transition-all duration-300 ease-in-out ${
+        scrolled 
+          ? 'bg-black/95 backdrop-blur-md border-b border-white/10 shadow-2xl' 
+          : 'bg-black/10 backdrop-blur-[2px] border-b border-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-50">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4A017] shadow-md group-hover:scale-105 transition-transform bg-white/5 p-0.5">
               <Image 
                 src="/logo.png" 
@@ -85,86 +103,86 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold tracking-wider text-lg sm:text-xl bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+              <span className="font-extrabold tracking-wider text-lg sm:text-xl bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent drop-shadow-md">
                 JM FOODS <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#C81E2C]/30 text-[#C81E2C] border border-[#C81E2C]/40 ml-1">BY TMJ</span>
               </span>
-              <span className="text-xs italic text-[#D4A017] tracking-wide">Good Food, Great Mood.</span>
+              <span className="text-xs italic text-[#D4A017] tracking-wide drop-shadow">Good Food, Great Mood.</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8 font-medium">
-            <a href="#home" className="hover:text-[#D4A017] transition-colors">Home</a>
-            <a href="#products" className="hover:text-[#D4A017] transition-colors">Products</a>
-            <a href="/about" className="hover:text-[#D4A017] transition-colors">About Us</a>
-            <a href="/contact" className="hover:text-[#D4A017] transition-colors">Contact</a>
-            <a 
+            <Link href="#home" className="hover:text-[#D4A017] transition-colors drop-shadow">Home</Link>
+            <Link href="#products" className="hover:text-[#D4A017] transition-colors drop-shadow">Products</Link>
+            <Link href="/about" className="hover:text-[#D4A017] transition-colors drop-shadow">About Us</Link>
+            <Link href="/contact" className="hover:text-[#D4A017] transition-colors drop-shadow">Contact</Link>
+            <Link 
               href="#products" 
               className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-semibold shadow-lg shadow-[#C81E2C]/30 hover:shadow-[#C81E2C]/50 hover:scale-105 transition-all duration-300 border border-[#D4A017]/40"
             >
               Order Now
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+            className="md:hidden p-2.5 rounded-xl bg-black/40 border border-white/20 text-white hover:bg-black/70 transition-colors shadow-md"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X size={24} className="text-[#C81E2C]" /> : <Menu size={24} className="text-[#D4A017]" />}
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu with 100% solid black background and high z-index */}
+        {/* Mobile Dropdown Menu with 100% solid black background */}
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-black border-b border-white/20 px-6 py-6 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.95)] z-50">
-            <a 
+            <Link 
               href="#home" 
               onClick={() => setMobileMenuOpen(false)} 
               className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
               Home
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="#products" 
               onClick={() => setMobileMenuOpen(false)} 
               className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
               Products
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/about" 
               onClick={() => setMobileMenuOpen(false)} 
               className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
               About Us
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/contact" 
               onClick={() => setMobileMenuOpen(false)} 
               className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
               Contact
-            </a>
+            </Link>
             <div className="pt-2">
-              <a 
+              <Link 
                 href="#products" 
                 onClick={() => setMobileMenuOpen(false)} 
                 className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-bold text-center block shadow-lg shadow-[#C81E2C]/40 border border-[#D4A017]/40"
               >
                 Order Now
-              </a>
+              </Link>
             </div>
           </div>
         )}
       </nav>
 
       {/* Hero Section - Restructured into Two Clear Layers */}
-      <section id="home" className="relative flex flex-col w-full">
+      <section id="home" className="relative flex flex-col w-full -mt-20">
         {/* Layer 1 — Photo area (top) with natural aspect ratio scaling so zero cropping occurs */}
-        <div className="relative w-full overflow-hidden bg-black flex items-center justify-center py-2">
-          <div className="relative w-full max-w-6xl aspect-[16/9] min-h-[250px] sm:min-h-[450px]">
+        <div className="relative w-full overflow-hidden bg-black flex items-center justify-center pt-28 pb-2">
+          <div className="relative w-full max-w-6xl aspect-[16/9] min-h-[280px] sm:min-h-[480px]">
             <Image 
               src="/images/hero-family.jpeg"
               alt="JM Foods Family & Kids Enjoying Snacks"
@@ -198,19 +216,19 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-              <a 
+              <Link 
                 href="#products" 
                 className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-bold text-base shadow-xl shadow-[#C81E2C]/50 hover:shadow-[#C81E2C]/70 hover:scale-105 transition-all duration-300 border border-[#D4A017]/60 flex items-center justify-center gap-2 group"
               >
                 <span>View Our Products</span>
                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a 
+              </Link>
+              <Link 
                 href="/contact" 
                 className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-zinc-900 border border-white/20 text-white font-semibold text-base hover:bg-zinc-800 transition-all shadow-lg"
               >
                 Get in Touch
-              </a>
+              </Link>
             </div>
 
             {/* 3 Badges */}
@@ -281,6 +299,7 @@ export default function Home() {
                       src={product.image}
                       alt={product.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.8)] group-hover:scale-110 transition-transform duration-500 ease-out p-2"
                     />
                   </div>
@@ -307,13 +326,13 @@ export default function Home() {
                   <span className="w-2 h-2 rounded-full bg-[#C81E2C] animate-pulse" />
                   Authentic Pack
                 </span>
-                <a 
-                  href="#contact" 
+                <Link 
+                  href="/contact" 
                   className="px-4 py-2 rounded-xl bg-white/10 hover:bg-[#C81E2C] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-md hover:shadow-lg hover:shadow-[#C81E2C]/30"
                 >
                   <span>Enquire</span>
                   <ChevronRight size={14} />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -330,12 +349,12 @@ export default function Home() {
               </p>
             </div>
             <div className="pt-6">
-              <a 
-                href="#contact" 
+              <Link 
+                href="/contact" 
                 className="w-full py-3 rounded-full bg-[#D4A017] text-black font-bold text-sm text-center block shadow-lg shadow-[#D4A017]/30 hover:bg-white transition-all"
               >
                 Contact Sales Team
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -357,6 +376,7 @@ export default function Home() {
                     src="/logo.png" 
                     alt="JM Foods Logo" 
                     fill 
+                    sizes="64px"
                     className="object-contain"
                   />
                 </div>
@@ -406,15 +426,15 @@ export default function Home() {
             <div className="lg:col-span-2 space-y-4">
               <h4 className="text-lg font-bold text-white tracking-wide">Quick Links</h4>
               <ul className="space-y-2.5 text-sm text-gray-400">
-                <li><a href="#home" className="hover:text-[#D4A017] transition-colors">Home</a></li>
-                <li><a href="#products" className="hover:text-[#D4A017] transition-colors">Our Products</a></li>
-                <li><a href="/about" className="hover:text-[#D4A017] transition-colors">About Us</a></li>
-                <li><a href="/contact" className="hover:text-[#D4A017] transition-colors">Contact Details</a></li>
+                <li><Link href="#home" className="hover:text-[#D4A017] transition-colors">Home</Link></li>
+                <li><Link href="#products" className="hover:text-[#D4A017] transition-colors">Our Products</Link></li>
+                <li><Link href="/about" className="hover:text-[#D4A017] transition-colors">About Us</Link></li>
+                <li><Link href="/contact" className="hover:text-[#D4A017] transition-colors">Contact Details</Link></li>
               </ul>
             </div>
 
             {/* Contact Details Block */}
-            <div id="contact" className="lg:col-span-4 space-y-4">
+            <div className="lg:col-span-4 space-y-4">
               <h4 className="text-lg font-bold text-white tracking-wide">Management & Contact</h4>
               <div className="space-y-3 text-sm text-gray-300">
                 <div className="flex flex-col space-y-1.5 pb-1">
@@ -452,6 +472,7 @@ export default function Home() {
                   src="/logo.png" 
                   alt="Logo Mark" 
                   fill 
+                  sizes="24px"
                   className="object-contain"
                 />
               </div>
