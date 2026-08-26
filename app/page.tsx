@@ -85,15 +85,15 @@ export default function Home() {
       {/* Curved Red-to-Gold Gradient Accent Bar */}
       <div className="h-1.5 w-full bg-gradient-to-r from-[#C81E2C] via-[#D4A017] to-[#C81E2C] sticky top-0 z-50 shadow-lg shadow-[#C81E2C]/20" />
 
-      {/* Navbar with smooth scroll transition between transparent and solid black */}
+      {/* White Frosted Glass Navbar */}
       <nav className={`sticky top-1.5 z-45 transition-all duration-300 ease-in-out ${
         scrolled 
-          ? 'bg-black/95 backdrop-blur-md border-b border-white/10 shadow-2xl' 
-          : 'bg-black/10 backdrop-blur-[2px] border-b border-transparent'
+          ? 'bg-white/25 backdrop-blur-[16px] border-b border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.3)]' 
+          : 'bg-white/15 backdrop-blur-[12px] border-b border-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.15)]'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-50">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4A017] shadow-md group-hover:scale-105 transition-transform bg-white/5 p-0.5">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4A017] shadow-md group-hover:scale-105 transition-transform bg-white/10 p-0.5">
               <Image 
                 src="/logo.png" 
                 alt="JM Foods Logo" 
@@ -103,22 +103,22 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold tracking-wider text-lg sm:text-xl bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent drop-shadow-md">
-                JM FOODS <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#C81E2C]/30 text-[#C81E2C] border border-[#C81E2C]/40 ml-1">BY TMJ</span>
+              <span className="font-extrabold tracking-wider text-lg sm:text-xl text-white [text-shadow:_0_2px_4px_rgb(0_0_0_/_80%)]">
+                JM FOODS <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#C81E2C]/80 text-white border border-[#C81E2C] ml-1">BY TMJ</span>
               </span>
-              <span className="text-xs italic text-[#D4A017] tracking-wide drop-shadow">Good Food, Great Mood.</span>
+              <span className="text-xs italic text-[#D4A017] tracking-wide [text-shadow:_0_1px_3px_rgb(0_0_0_/_90%)] font-semibold">Good Food, Great Mood.</span>
             </div>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8 font-medium">
-            <Link href="#home" className="hover:text-[#D4A017] transition-colors drop-shadow">Home</Link>
-            <Link href="#products" className="hover:text-[#D4A017] transition-colors drop-shadow">Products</Link>
-            <Link href="/about" className="hover:text-[#D4A017] transition-colors drop-shadow">About Us</Link>
-            <Link href="/contact" className="hover:text-[#D4A017] transition-colors drop-shadow">Contact</Link>
+          <div className="hidden md:flex items-center gap-8 font-semibold text-white [text-shadow:_0_1px_3px_rgb(0_0_0_/_80%)]">
+            <Link href="#home" className="hover:text-[#D4A017] transition-colors">Home</Link>
+            <Link href="#products" className="hover:text-[#D4A017] transition-colors">Products</Link>
+            <Link href="/about" className="hover:text-[#D4A017] transition-colors">About Us</Link>
+            <Link href="/contact" className="hover:text-[#D4A017] transition-colors">Contact</Link>
             <Link 
               href="#products" 
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-semibold shadow-lg shadow-[#C81E2C]/30 hover:shadow-[#C81E2C]/50 hover:scale-105 transition-all duration-300 border border-[#D4A017]/40"
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-semibold shadow-lg shadow-[#C81E2C]/40 hover:shadow-[#C81E2C]/60 hover:scale-105 transition-all duration-300 border border-[#D4A017]/60 [text-shadow:none]"
             >
               Order Now
             </Link>
@@ -127,7 +127,7 @@ export default function Home() {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2.5 rounded-xl bg-black/40 border border-white/20 text-white hover:bg-black/70 transition-colors shadow-md"
+            className="md:hidden p-2.5 rounded-xl bg-white/20 border border-white/30 text-white hover:bg-white/30 transition-colors shadow-md"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X size={24} className="text-[#C81E2C]" /> : <Menu size={24} className="text-[#D4A017]" />}
