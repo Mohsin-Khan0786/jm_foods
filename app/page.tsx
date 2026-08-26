@@ -11,13 +11,14 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 20) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // check on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -83,13 +84,13 @@ export default function Home() {
     <div className="min-h-screen bg-black text-gray-100 font-sans selection:bg-[#C81E2C] selection:text-white">
       
       {/* Curved Red-to-Gold Gradient Accent Bar */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-[#C81E2C] via-[#D4A017] to-[#C81E2C] sticky top-0 z-50 shadow-lg shadow-[#C81E2C]/20" />
+      <div className="h-1.5 w-full bg-gradient-to-r from-[#C81E2C] via-[#D4A017] to-[#C81E2C] fixed top-0 z-50 shadow-lg shadow-[#C81E2C]/20" />
 
-      {/* White Frosted Glass Navbar */}
-      <nav className={`sticky top-1.5 z-45 transition-all duration-300 ease-in-out ${
+      {/* White Frosted Glass Navbar with fixed positioning and high z-index */}
+      <header className={`fixed top-1.5 left-0 right-0 z-45 transition-all duration-300 ease-in-out ${
         scrolled 
-          ? 'bg-white/25 backdrop-blur-[16px] border-b border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.3)]' 
-          : 'bg-white/15 backdrop-blur-[12px] border-b border-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.15)]'
+          ? 'bg-white/30 backdrop-blur-[18px] border-b border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.4)]' 
+          : 'bg-white/20 backdrop-blur-[12px] border-b border-white/25 shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-50">
           <Link href="/" className="flex items-center gap-3 group">
@@ -103,22 +104,22 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold tracking-wider text-lg sm:text-xl text-white [text-shadow:_0_2px_4px_rgb(0_0_0_/_80%)]">
-                JM FOODS <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#C81E2C]/80 text-white border border-[#C81E2C] ml-1">BY TMJ</span>
+              <span className="font-extrabold tracking-wider text-lg sm:text-xl text-white [text-shadow:_0_2px_4px_rgb(0_0_0_/_90%)]">
+                JM FOODS <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#C81E2C] text-white border border-[#C81E2C] ml-1">BY TMJ</span>
               </span>
-              <span className="text-xs italic text-[#D4A017] tracking-wide [text-shadow:_0_1px_3px_rgb(0_0_0_/_90%)] font-semibold">Good Food, Great Mood.</span>
+              <span className="text-xs italic text-[#D4A017] tracking-wide [text-shadow:_0_1px_3px_rgb(0_0_0_/_95%)] font-bold">Good Food, Great Mood.</span>
             </div>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8 font-semibold text-white [text-shadow:_0_1px_3px_rgb(0_0_0_/_80%)]">
+          <div className="hidden md:flex items-center gap-8 font-semibold text-white [text-shadow:_0_1px_3px_rgb(0_0_0_/_90%)]">
             <Link href="#home" className="hover:text-[#D4A017] transition-colors">Home</Link>
             <Link href="#products" className="hover:text-[#D4A017] transition-colors">Products</Link>
             <Link href="/about" className="hover:text-[#D4A017] transition-colors">About Us</Link>
             <Link href="/contact" className="hover:text-[#D4A017] transition-colors">Contact</Link>
             <Link 
               href="#products" 
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-semibold shadow-lg shadow-[#C81E2C]/40 hover:shadow-[#C81E2C]/60 hover:scale-105 transition-all duration-300 border border-[#D4A017]/60 [text-shadow:none]"
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-semibold shadow-lg shadow-[#C81E2C]/50 hover:shadow-[#C81E2C]/70 hover:scale-105 transition-all duration-300 border border-[#D4A017]/60 [text-shadow:none]"
             >
               Order Now
             </Link>
@@ -176,12 +177,12 @@ export default function Home() {
             </div>
           </div>
         )}
-      </nav>
+      </header>
 
-      {/* Hero Section - Restructured into Two Clear Layers */}
-      <section id="home" className="relative flex flex-col w-full -mt-20">
+      {/* Hero Section - Restructured into Two Clear Layers with top padding for fixed navbar */}
+      <section id="home" className="relative flex flex-col w-full pt-24 sm:pt-28">
         {/* Layer 1 — Photo area (top) with natural aspect ratio scaling so zero cropping occurs */}
-        <div className="relative w-full overflow-hidden bg-black flex items-center justify-center pt-28 pb-2">
+        <div className="relative w-full overflow-hidden bg-black flex items-center justify-center py-4">
           <div className="relative w-full max-w-6xl aspect-[16/9] min-h-[280px] sm:min-h-[480px]">
             <Image 
               src="/images/hero-family.jpeg"
