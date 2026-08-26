@@ -97,7 +97,7 @@ export default function Home() {
             <a href="#home" className="hover:text-[#D4A017] transition-colors">Home</a>
             <a href="#products" className="hover:text-[#D4A017] transition-colors">Products</a>
             <a href="/about" className="hover:text-[#D4A017] transition-colors">About Us</a>
-            <a href="#contact" className="hover:text-[#D4A017] transition-colors">Contact</a>
+            <a href="/contact" className="hover:text-[#D4A017] transition-colors">Contact</a>
             <a 
               href="#products" 
               className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-semibold shadow-lg shadow-[#C81E2C]/30 hover:shadow-[#C81E2C]/50 hover:scale-105 transition-all duration-300 border border-[#D4A017]/40"
@@ -141,7 +141,7 @@ export default function Home() {
               About Us
             </a>
             <a 
-              href="#contact" 
+              href="/contact" 
               onClick={() => setMobileMenuOpen(false)} 
               className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
             >
@@ -206,7 +206,7 @@ export default function Home() {
                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
-                href="#contact" 
+                href="/contact" 
                 className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-zinc-900 border border-white/20 text-white font-semibold text-base hover:bg-zinc-800 transition-all shadow-lg"
               >
                 Get in Touch
@@ -409,7 +409,7 @@ export default function Home() {
                 <li><a href="#home" className="hover:text-[#D4A017] transition-colors">Home</a></li>
                 <li><a href="#products" className="hover:text-[#D4A017] transition-colors">Our Products</a></li>
                 <li><a href="/about" className="hover:text-[#D4A017] transition-colors">About Us</a></li>
-                <li><a href="#contact" className="hover:text-[#D4A017] transition-colors">Contact Details</a></li>
+                <li><a href="/contact" className="hover:text-[#D4A017] transition-colors">Contact Details</a></li>
               </ul>
             </div>
 
