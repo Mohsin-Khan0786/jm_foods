@@ -37,6 +37,30 @@ export default function AboutPage() {
     }
   ];
 
+  const leadershipTeam = [
+    {
+      name: "Umair",
+      role: "CEO (Chief Executive Officer)",
+      initial: "U",
+      bio: "Driving the visionary growth and strategic direction of JM Foods, ensuring unwavering dedication to excellence, premium standards, and customer happiness across Pakistan.",
+      accent: "border-[#D4A017]/50 hover:border-[#D4A017] shadow-[#D4A017]/10"
+    },
+    {
+      name: "Ghulam Sarwar",
+      role: "GM Production (General Manager, Production)",
+      initial: "G",
+      bio: "Overseeing state-of-the-art manufacturing operations and rigorous quality controls to guarantee that every single snack delivers the ultimate fresh crunch and authentic taste.",
+      accent: "border-[#C81E2C]/50 hover:border-[#C81E2C] shadow-[#C81E2C]/10"
+    },
+    {
+      name: "Jhanzaib Pathan",
+      role: "GM Marketing (General Manager, Marketing)",
+      initial: "J",
+      bio: "Spearheading brand expansion, market outreach, and retail partnerships to bring the joy of JM Foods into households and celebrations nationwide.",
+      accent: "border-[#D4A017]/50 hover:border-[#D4A017] shadow-[#D4A017]/10"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-gray-100 font-sans selection:bg-[#C81E2C] selection:text-white">
       
@@ -52,6 +76,7 @@ export default function AboutPage() {
                 src="/logo.png" 
                 alt="JM Foods Logo" 
                 fill 
+                sizes="48px"
                 className="object-contain"
               />
             </div>
@@ -68,7 +93,7 @@ export default function AboutPage() {
             <Link href="/" className="hover:text-[#D4A017] transition-colors">Home</Link>
             <Link href="/#products" className="hover:text-[#D4A017] transition-colors">Products</Link>
             <Link href="/about" className="text-[#D4A017] font-semibold transition-colors">About Us</Link>
-            <Link href="/#contact" className="hover:text-[#D4A017] transition-colors">Contact</Link>
+            <Link href="/contact" className="hover:text-[#D4A017] transition-colors">Contact</Link>
             <Link 
               href="/#products" 
               className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-semibold shadow-lg shadow-[#C81E2C]/30 hover:shadow-[#C81E2C]/50 hover:scale-105 transition-all duration-300 border border-[#D4A017]/40"
@@ -93,6 +118,7 @@ export default function AboutPage() {
               src="/logo.png" 
               alt="JM Foods Logo" 
               fill 
+              sizes="80px"
               className="object-contain"
             />
           </div>
@@ -141,6 +167,52 @@ export default function AboutPage() {
               Beyond just snacks, our mission is captured in our motto: <strong className="text-white italic">"Good Food, Great Mood."</strong> We believe that sharing great-tasting food brings people closer, lights up celebrations, and turns ordinary moments into cherished memories.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Leadership Team Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative border-t border-white/10">
+        <div className="text-center space-y-4 mb-16">
+          <div className="inline-block px-3.5 py-1 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/30 text-[#D4A017] text-xs font-bold tracking-widest uppercase">
+            Visionary Guidance
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight uppercase">
+            LEADERSHIP <span className="text-[#C81E2C]">TEAM</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#C81E2C] to-[#D4A017] mx-auto rounded-full" />
+          <p className="max-w-xl mx-auto text-gray-400 text-base">
+            Meet the dedicated leaders guiding JM Foods toward excellence, quality, and nationwide growth.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {leadershipTeam.map((member, index) => (
+            <div 
+              key={index}
+              className={`rounded-3xl p-8 bg-gradient-to-b from-stone-900/90 via-black to-black border ${member.accent} backdrop-blur-xl flex flex-col justify-between hover:-translate-y-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-out group`}
+            >
+              <div className="space-y-6">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-[#C81E2C] to-[#D4A017] p-0.5 mx-auto shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+                    <span className="text-2xl font-black text-white">{member.initial}</span>
+                  </div>
+                </div>
+
+                <div className="text-center space-y-2">
+                  <h3 className="text-2xl font-black text-white group-hover:text-[#D4A017] transition-colors">{member.name}</h3>
+                  <p className="text-xs font-bold text-[#D4A017] uppercase tracking-wider">{member.role}</p>
+                </div>
+
+                <p className="text-gray-300 text-sm leading-relaxed text-center">
+                  {member.bio}
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-white/10 mt-6 flex items-center justify-center">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-gray-500">JM Foods by TMJ</span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -276,7 +348,7 @@ export default function AboutPage() {
               <ChevronRight size={20} />
             </Link>
             <Link 
-              href="/#contact" 
+              href="/contact" 
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 border border-white/15 text-white font-semibold text-lg hover:bg-white/10 transition-all backdrop-blur-md"
             >
               Contact Us
@@ -297,6 +369,7 @@ export default function AboutPage() {
                     src="/logo.png" 
                     alt="JM Foods Logo" 
                     fill 
+                    sizes="64px"
                     className="object-contain"
                   />
                 </div>
@@ -317,11 +390,11 @@ export default function AboutPage() {
                 <li><Link href="/" className="hover:text-[#D4A017] transition-colors">Home</Link></li>
                 <li><Link href="/#products" className="hover:text-[#D4A017] transition-colors">Our Products</Link></li>
                 <li><Link href="/about" className="hover:text-[#D4A017] transition-colors">About Us</Link></li>
-                <li><Link href="/#contact" className="hover:text-[#D4A017] transition-colors">Contact Details</Link></li>
+                <li><Link href="/contact" className="hover:text-[#D4A017] transition-colors">Contact Details</Link></li>
               </ul>
             </div>
 
-            <div id="contact" className="lg:col-span-4 space-y-4">
+            <div className="lg:col-span-4 space-y-4">
               <h4 className="text-lg font-bold text-white tracking-wide">Management & Contact</h4>
               <div className="space-y-3 text-sm text-gray-300">
                 <div className="flex flex-col space-y-1.5 pb-1">
@@ -358,6 +431,7 @@ export default function AboutPage() {
                   src="/logo.png" 
                   alt="Logo Mark" 
                   fill 
+                  sizes="24px"
                   className="object-contain"
                 />
               </div>
