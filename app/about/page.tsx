@@ -39,9 +39,9 @@ export default function AboutPage() {
 
   const leadershipTeam = [
     {
-      name: "Umair",
+      name: "Muhammad Umair",
       role: "CEO (Chief Executive Officer)",
-      initial: "U",
+      initial: "M",
       bio: "Driving the visionary growth and strategic direction of JM Foods, ensuring unwavering dedication to excellence, premium standards, and customer happiness across Pakistan.",
       accent: "border-[#D4A017]/50 hover:border-[#D4A017] shadow-[#D4A017]/10"
     },
