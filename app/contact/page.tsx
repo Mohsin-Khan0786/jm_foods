@@ -163,14 +163,27 @@ export default function ContactPage() {
 
             {/* Contact Cards */}
             <div className="space-y-4">
-              {/* Phone */}
-              <div className="p-5 rounded-2xl bg-zinc-900/90 border border-[#D4A017]/40 flex items-center gap-4 shadow-lg hover:border-[#D4A017] transition-all">
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D4A017] shrink-0">
+              {/* Phone / WhatsApp Numbers */}
+              <div className="p-5 rounded-2xl bg-zinc-900/90 border border-[#D4A017]/40 flex items-start gap-4 shadow-lg hover:border-[#D4A017] transition-all">
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#D4A017] shrink-0 mt-1">
                   <Phone size={22} />
                 </div>
-                <div>
+                <div className="space-y-2.5 w-full">
                   <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Phone / WhatsApp</h4>
-                  <a href="tel:923200060111" className="text-base font-bold text-white hover:text-[#D4A017] transition-colors">+92 320 0060111</a>
+                  <div className="space-y-1.5 text-sm">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-300">Muhammad Umair:</span>
+                      <a href="tel:923200060111" className="font-bold text-white hover:text-[#D4A017] transition-colors">+92 320 0060111</a>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-300">Ghulam Sarwar:</span>
+                      <a href="tel:923113435351" className="font-bold text-white hover:text-[#D4A017] transition-colors">+92 311 3435351</a>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-300">Jhanzaib Pathan:</span>
+                      <a href="tel:923073470790" className="font-bold text-white hover:text-[#D4A017] transition-colors">+92 307 3470790</a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -181,7 +194,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Email Address</h4>
-                  <a href="mailto:umairumair193@gmail.com" className="text-base font-bold text-white hover:text-[#D4A017] transition-colors break-all">umairumair193@gmail.com</a>
+                  <a href="mailto:jmfoods8@gmail.com" className="text-base font-bold text-white hover:text-[#D4A017] transition-colors break-all">jmfoods8@gmail.com</a>
                 </div>
               </div>
 
@@ -419,7 +432,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-3 pt-2 border-t border-white/10">
                   <Mail size={18} className="text-[#C81E2C] shrink-0 mt-1" />
-                  <a href="mailto:umairumair193@gmail.com" className="hover:text-[#D4A017] transition-colors break-all">umairumair193@gmail.com</a>
+                  <a href="mailto:jmfoods8@gmail.com" className="hover:text-[#D4A017] transition-colors break-all">jmfoods8@gmail.com</a>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-[#D4A017] shrink-0 mt-1" />
