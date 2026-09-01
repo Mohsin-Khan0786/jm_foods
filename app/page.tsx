@@ -80,6 +80,99 @@ export default function Home() {
     }
   ];
 
+  const upcomingProducts = [
+    {
+      id: 101,
+      name: "Special Shikari Poori Katori",
+      tag: "Spicy Poori Katori",
+      description: "Unique crispy poori katori mix bursting with bold traditional shikari spices and tangy zest.",
+      image: "/images/upcoming/special shakrapuri katuri.jpeg",
+      bgTone: "from-orange-950/60 via-amber-950/40 to-black border-orange-600/30 hover:shadow-orange-500/20",
+      badgeBg: "bg-orange-500/20 text-orange-300 border-orange-500/40",
+      glowColor: "from-orange-600/30 to-amber-600/10"
+    },
+    {
+      id: 102,
+      name: "Chaska Time Snacks",
+      tag: "BBQ Flavor",
+      description: "Green and black packaging delivering an authentic, mouth-watering smoky BBQ-inspired flavor.",
+      image: "/images/upcoming/Chaska Time.jpeg",
+      bgTone: "from-emerald-950/60 via-slate-950/50 to-black border-emerald-600/30 hover:shadow-emerald-500/20",
+      badgeBg: "bg-emerald-500/20 text-emerald-300 border-emerald-500/40",
+      glowColor: "from-emerald-600/30 to-green-900/10"
+    },
+    {
+      id: 103,
+      name: "Piyazi Chaska Snacks",
+      tag: "Onion & Salt",
+      description: "Striking blue packaging featuring the classic savory combination of farm-fresh onion and salt.",
+      image: "/images/upcoming/Piyazi.jpeg",
+      bgTone: "from-blue-950/60 via-slate-950/50 to-black border-blue-600/30 hover:shadow-blue-500/20",
+      badgeBg: "bg-blue-500/20 text-blue-300 border-blue-500/40",
+      glowColor: "from-blue-600/30 to-cyan-900/10"
+    },
+    {
+      id: 104,
+      name: "TakaTak Khatey Jaao",
+      tag: "Achari Mix",
+      description: "Vibrant green and white packaging packed with an addictive tangy and spicy achari dish flavor.",
+      image: "/images/upcoming/TakaTak.jpeg",
+      bgTone: "from-lime-950/60 via-zinc-950/50 to-black border-lime-600/30 hover:shadow-lime-500/20",
+      badgeBg: "bg-lime-500/20 text-lime-300 border-lime-500/40",
+      glowColor: "from-lime-600/30 to-emerald-900/10"
+    },
+    {
+      id: 105,
+      name: "Seekh Kabab Snacks",
+      tag: "Kabab Flavor",
+      description: "Warm brown and fiery packaging bringing the rich, aromatic experience of sizzling seekh kababs.",
+      image: "/images/upcoming/seekh kabab snacks.jpeg",
+      bgTone: "from-amber-950/70 via-red-950/40 to-black border-amber-600/30 hover:shadow-amber-500/20",
+      badgeBg: "bg-amber-600/20 text-amber-300 border-amber-600/40",
+      glowColor: "from-amber-600/30 to-red-900/10"
+    },
+    {
+      id: 106,
+      name: "Mirchi Dhamaka Snacks",
+      tag: "Extra Spicy",
+      description: "Bold red packaging crafted specially for spice lovers seeking an explosive chili kick.",
+      image: "/images/upcoming/Mirchi Dhamaka.jpeg",
+      bgTone: "from-red-950/70 via-rose-950/40 to-black border-red-600/30 hover:shadow-red-600/25",
+      badgeBg: "bg-red-600/20 text-red-300 border-red-600/40",
+      glowColor: "from-red-600/35 to-rose-950/10"
+    },
+    {
+      id: 107,
+      name: "Meri Karari Cheezy Noodles",
+      tag: "Cheezy Noodles",
+      description: "Yellow and red packaging blending comforting cheesy noodles flavor with an ultimate crunch.",
+      image: "/images/upcoming/meri karari Noodles.jpeg",
+      bgTone: "from-yellow-950/60 via-amber-950/40 to-black border-yellow-600/30 hover:shadow-yellow-500/20",
+      badgeBg: "bg-yellow-500/20 text-yellow-300 border-yellow-500/40",
+      glowColor: "from-yellow-600/30 to-amber-800/10"
+    },
+    {
+      id: 108,
+      name: "Salad Snacks",
+      tag: "Fresh Salad",
+      description: "Refreshing green packaging offering a crisp, zesty garden salad flavor profile.",
+      image: "/images/upcoming/salad snacks.jpeg",
+      bgTone: "from-green-950/60 via-emerald-950/40 to-black border-green-600/30 hover:shadow-green-500/20",
+      badgeBg: "bg-green-500/20 text-green-300 border-green-500/40",
+      glowColor: "from-green-600/30 to-teal-900/10"
+    },
+    {
+      id: 109,
+      name: "Bingoo Ringoo",
+      tag: "Fiery Chilli Corn",
+      description: "Purple packaging featuring crunchy toasted corn rings coated in a fiery chilli seasoning.",
+      image: "/images/upcoming/Bingo Ringo Snacks.jpeg",
+      bgTone: "from-purple-950/60 via-indigo-950/40 to-black border-purple-600/30 hover:shadow-purple-500/20",
+      badgeBg: "bg-purple-500/20 text-purple-300 border-purple-500/40",
+      glowColor: "from-purple-600/30 to-indigo-900/10"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-gray-100 font-sans selection:bg-[#C81E2C] selection:text-white">
       
@@ -354,6 +447,99 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Step 5 — Optional connector: Thin section divider with red/gold accent stripe */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="relative flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-white/10" />
+          </div>
+          <div className="relative px-6 py-2 bg-black border border-[#D4A017]/40 rounded-full shadow-lg">
+            <div className="h-1 w-32 bg-gradient-to-r from-[#C81E2C] via-[#D4A017] to-[#C81E2C] rounded-full" />
+          </div>
+        </div>
+      </div>
+
+      {/* Step 1 to 4 — Upcoming Products Section */}
+      <section id="upcoming-products" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <div className="text-center space-y-4 mb-16">
+          <div className="inline-block px-3.5 py-1 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/30 text-[#D4A017] text-xs font-bold tracking-widest uppercase">
+            Coming Soon Collection
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight uppercase">
+            UPCOMING <span className="text-[#C81E2C]">FLAVORS</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#C81E2C] mx-auto rounded-full" />
+          <p className="max-w-xl mx-auto text-gray-400 text-base">
+            More exciting snacks from JM Foods are on the way! Get ready for fresh tastes and incredible crunch.
+          </p>
+        </div>
+
+        {/* Product Cards Grid - 3-4 columns on desktop, 2 on tablet, 1 on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+          {upcomingProducts.map((product) => (
+            <div 
+              key={product.id}
+              className={`relative rounded-3xl p-6 sm:p-8 bg-gradient-to-b ${product.bgTone} border backdrop-blur-xl flex flex-col justify-between group hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl transition-all duration-300 ease-out`}
+            >
+              {/* Subtle Ambient Accent Glow behind each card */}
+              <div className={`absolute inset-0 bg-gradient-to-tr ${product.glowColor} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none -z-10`} />
+
+              {/* Step 3 — "Coming Soon" badge on top corner (gold/red ribbon style) */}
+              <div className="absolute top-6 right-6 z-20 flex items-center gap-2">
+                <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-gradient-to-r from-[#C81E2C] to-[#D4A017] text-white uppercase tracking-wider shadow-lg border border-white/20 animate-pulse">
+                  Coming Soon
+                </span>
+                <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold border ${product.badgeBg} uppercase tracking-wider backdrop-blur-md shadow-sm hidden sm:inline-block`}>
+                  {product.tag}
+                </span>
+              </div>
+
+              <div>
+                {/* Product Image Frame */}
+                <div className="relative w-full h-56 sm:h-64 mb-6 rounded-2xl overflow-hidden bg-black/50 border border-white/10 flex items-center justify-center group-hover:border-white/30 transition-all duration-300 shadow-inner">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
+                  <div className="relative w-full h-full p-4 flex items-center justify-center">
+                    <Image 
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.8)] group-hover:scale-110 transition-transform duration-500 ease-out p-2"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-start justify-between gap-2 mb-2 pt-2">
+                  <h3 className="text-2xl font-black group-hover:text-[#D4A017] transition-colors leading-tight">
+                    {product.name}
+                  </h3>
+                </div>
+
+                <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                  {product.description}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#D4A017]" />
+                  In Production
+                </span>
+                {/* Step 3 — Disabled/replaced with "Notify Me" button (non-functional visual) */}
+                <button 
+                  type="button"
+                  onClick={(e) => e.preventDefault()}
+                  className="px-4 py-2 rounded-xl bg-white/10 text-gray-300 text-xs font-bold border border-white/15 cursor-default flex items-center gap-1.5 shadow-md"
+                >
+                  <span>Notify Me</span>
+                  <Sparkles size={14} className="text-[#D4A017]" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
