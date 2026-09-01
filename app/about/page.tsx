@@ -170,6 +170,39 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative text-center">
+        <div className="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none">
+          <div className="w-[600px] h-[300px] bg-gradient-to-r from-[#D4A017] to-[#C81E2C] rounded-full blur-[140px]" />
+        </div>
+        <div className="relative z-10 space-y-4 mb-8">
+          <div className="inline-block px-3.5 py-1 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/30 text-[#D4A017] text-xs font-bold tracking-widest uppercase">
+            Brand Story Video
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight uppercase">
+            SEE JM FOODS <span className="text-[#C81E2C]">IN ACTION</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#C81E2C] to-[#D4A017] mx-auto rounded-full" />
+          <p className="text-gray-400 text-sm sm:text-base">
+            A quick look at the passion, care, and crunch behind every pack.
+          </p>
+        </div>
+
+        <div className="relative z-10 max-w-3xl mx-auto rounded-3xl overflow-hidden border-2 border-[#D4A017]/40 shadow-[0_20px_50px_rgba(0,0,0,0.9)] bg-zinc-950 p-2">
+          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-black">
+            <video 
+              controls 
+              preload="metadata"
+              poster="/logo.png"
+              className="w-full h-full object-cover"
+            >
+              <source src="/videos/jm-foods-story.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* Leadership Team Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative border-t border-white/10">
         <div className="text-center space-y-4 mb-16">
