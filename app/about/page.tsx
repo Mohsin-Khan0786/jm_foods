@@ -1,9 +1,13 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, Heart, Sparkles, ChevronRight, Phone, Mail, MapPin, ShoppingBag, ShieldCheck, Flame, Smile } from 'lucide-react';
+import { Award, Heart, Sparkles, ChevronRight, Phone, Mail, MapPin, ShoppingBag, ShieldCheck, Flame, Smile, Menu, X } from 'lucide-react';
 
 export default function AboutPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const qualityPoints = [
     {
       title: "Premium Quality",
@@ -68,8 +72,8 @@ export default function AboutPage() {
       <div className="h-1.5 w-full bg-gradient-to-r from-[#C81E2C] via-[#D4A017] to-[#C81E2C] sticky top-0 z-50 shadow-lg shadow-[#C81E2C]/20" />
 
       {/* Navbar */}
-      <nav className="sticky top-1.5 z-40 bg-black/90 backdrop-blur-md border-b border-white/10 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <nav className="sticky top-1.5 z-40 bg-black border-b border-white/15 transition-all">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-50">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4A017] shadow-md group-hover:scale-105 transition-transform bg-white/5 p-0.5">
               <Image 
@@ -81,10 +85,10 @@ export default function AboutPage() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold tracking-wider text-lg sm:text-xl bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-                JM FOODS <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#C81E2C]/30 text-[#C81E2C] border border-[#C81E2C]/40 ml-1">BY TMJ</span>
+              <span className="font-extrabold tracking-wider text-lg sm:text-xl text-white">
+                JM FOODS <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#C81E2C] text-white border border-[#C81E2C] ml-1">BY TMJ</span>
               </span>
-              <span className="text-xs italic text-[#D4A017] tracking-wide">Good Food, Great Mood.</span>
+              <span className="text-xs italic text-[#D4A017] tracking-wide font-bold">Good Food, Great Mood.</span>
             </div>
           </Link>
 
@@ -101,7 +105,59 @@ export default function AboutPage() {
               Order Now
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2.5 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors shadow-md"
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X size={24} className="text-[#C81E2C]" /> : <Menu size={24} className="text-[#D4A017]" />}
+          </button>
         </div>
+
+        {/* Mobile Dropdown Menu with 100% solid black background */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-black border-b border-white/20 px-6 py-6 space-y-4 shadow-[0_20px_50px_rgba(0,0,0,0.95)] z-50">
+            <Link 
+              href="/" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
+            >
+              Home
+            </Link>
+            <Link 
+              href="/#products" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
+            >
+              Products
+            </Link>
+            <Link 
+              href="/about" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="block text-base font-semibold text-[#D4A017] py-3 border-b border-white/10 transition-colors"
+            >
+              About Us
+            </Link>
+            <Link 
+              href="/contact" 
+              onClick={() => setMobileMenuOpen(false)} 
+              className="block text-base font-semibold text-gray-200 hover:text-[#D4A017] py-3 border-b border-white/10 transition-colors"
+            >
+              Contact
+            </Link>
+            <div className="pt-2">
+              <Link 
+                href="/#products" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#C81E2C] to-[#9B1C26] text-white font-bold text-center block shadow-lg shadow-[#C81E2C]/40 border border-[#D4A017]/40"
+              >
+                Order Now
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Step 1: Page Header / Banner */}
@@ -440,7 +496,7 @@ export default function AboutPage() {
                     <a href="tel:923113435351" className="text-xs text-gray-300 hover:text-[#D4A017] font-semibold">+92 311 3435351</a>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[#D4A017] font-bold text-xs uppercase tracking-wider">Jhanzaib Pathan (GM MrktG)</span>
+                    <span className="text-[#D4A017] font-bold text-xs uppercase tracking-wider">Jhanzaib Pathan (GM Mktg)</span>
                     <a href="tel:923073470790" className="text-xs text-gray-300 hover:text-[#D4A017] font-semibold">+92 307 3470790</a>
                   </div>
                 </div>
