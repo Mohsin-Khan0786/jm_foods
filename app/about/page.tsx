@@ -189,12 +189,12 @@ export default function AboutPage() {
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto rounded-3xl overflow-hidden border-2 border-[#D4A017]/40 shadow-[0_20px_50px_rgba(0,0,0,0.9)] bg-zinc-950 p-2">
-          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-black">
+          <div className="relative w-full rounded-2xl overflow-hidden bg-black flex items-center justify-center">
             <video 
               controls 
               preload="metadata"
               poster="/logo.png"
-              className="w-full h-full object-cover"
+              className="w-full h-auto max-h-[550px] object-contain"
             >
               <source src="/videos/jm-foods-story.mp4" type="video/mp4" />
               Your browser does not support the video tag.
