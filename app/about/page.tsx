@@ -75,16 +75,16 @@ export default function AboutPage() {
       <nav className="sticky top-1.5 z-40 bg-black border-b border-white/15 transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-50">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4A017] shadow-md group-hover:scale-105 transition-transform bg-white/5 p-0.5">
+            <div className="relative w-28 h-12 rounded-xl overflow-hidden border border-[#D4A017]/40 shadow-md group-hover:scale-105 transition-transform bg-white p-0.5">
               <Image 
-                src="/logo.png" 
+                src="/logo.jpeg" 
                 alt="JM Foods Logo" 
                 fill 
-                sizes="48px"
+                sizes="112px"
                 className="object-contain"
               />
             </div>
-            <div className="flex flex-col">
+            <div className="hidden sm:flex flex-col">
               <span className="font-extrabold tracking-wider text-lg sm:text-xl text-white">
                 JM FOODS <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#C81E2C] text-white border border-[#C81E2C] ml-1">BY TMJ</span>
               </span>
@@ -169,12 +169,12 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto space-y-6 z-10">
-          <div className="relative w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-[#D4A017] shadow-xl bg-white/5 p-1 animate-pulse">
+          <div className="relative w-32 h-16 mx-auto rounded-2xl overflow-hidden border border-[#D4A017]/40 shadow-xl bg-white p-1 animate-pulse">
             <Image 
-              src="/logo.png" 
+              src="/logo.jpeg" 
               alt="JM Foods Logo" 
               fill 
-              sizes="80px"
+              sizes="128px"
               className="object-contain"
             />
           </div>
@@ -453,12 +453,12 @@ export default function AboutPage() {
             
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#D4A017] bg-white/5 p-1 shadow-md">
+                <div className="relative w-24 h-24 rounded-2xl overflow-hidden border border-[#D4A017]/40 bg-white p-1 shadow-md">
                   <Image 
-                    src="/logo.png" 
+                    src="/logo.jpeg" 
                     alt="JM Foods Logo" 
                     fill 
-                    sizes="64px"
+                    sizes="96px"
                     className="object-contain"
                   />
                 </div>
@@ -515,12 +515,12 @@ export default function AboutPage() {
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
             <div className="flex items-center gap-2">
-              <div className="relative w-6 h-6 rounded-full overflow-hidden border border-[#D4A017] bg-white/5">
+              <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-[#D4A017]/40 bg-white p-0.5">
                 <Image 
-                  src="/logo.png" 
+                  src="/logo.jpeg" 
                   alt="Logo Mark" 
                   fill 
-                  sizes="24px"
+                  sizes="32px"
                   className="object-contain"
                 />
               </div>
